@@ -13,6 +13,7 @@ enum NoteLane {
 	RIGHT,
 }
 
+# TODO: Refactor this enum to use colors derived from a theme resource
 ## RRGGBBFF Color codes
 enum NoteColor {
 	WHITE = 0xffffffff, 
@@ -23,8 +24,11 @@ enum NoteColor {
 }
 
 
-func _init(lane_: NoteLane = NoteLane.CENTER, color_: NoteColor = NoteColor.WHITE,
-		timestamp_: float = 1.0) -> void:
+func _init(
+		lane_: NoteLane = NoteLane.CENTER,
+		color_: NoteColor = NoteColor.WHITE,
+		timestamp_: float = 1.0
+) -> void:
 	lane = lane_
 	color = color_
 	timestamp = timestamp_
