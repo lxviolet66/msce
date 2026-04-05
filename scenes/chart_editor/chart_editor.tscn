@@ -1,0 +1,251 @@
+[gd_scene format=3 uid="uid://dan7gh3s4gpx1"]
+
+[ext_resource type="Theme" uid="uid://g6ppddghccqt" path="res://resources/themes/main_theme.tres" id="1_q24t0"]
+[ext_resource type="StyleBox" uid="uid://cd6wkoa5swxw4" path="res://resources/styles/pane_1_style_box.tres" id="2_go4qb"]
+[ext_resource type="StyleBox" uid="uid://b1nuy86y3b0kt" path="res://resources/styles/pane_2_style_box.tres" id="3_42u7e"]
+[ext_resource type="StyleBox" uid="uid://bard5v1jnl0ot" path="res://resources/styles/element_1_style_box.tres" id="4_42u7e"]
+[ext_resource type="StyleBox" uid="uid://b3eymydwfvlvq" path="res://resources/styles/pane_3_style_box.tres" id="4_gtmq8"]
+[ext_resource type="Script" uid="uid://drvrsskh4nw2" path="res://scenes/timeline/timeline.gd" id="5_tylep"]
+[ext_resource type="Theme" uid="uid://bee06p7dc2qnj" path="res://resources/themes/lane_indicator.tres" id="6_3r36a"]
+[ext_resource type="StyleBox" uid="uid://cnkhjrf70jyh4" path="res://resources/styles/lane_indicator_white.tres" id="7_o38to"]
+[ext_resource type="StyleBox" uid="uid://2uui63t76ces" path="res://resources/styles/lane_indicator_red.tres" id="8_1o21e"]
+[ext_resource type="StyleBox" uid="uid://etxtvw1m5h4t" path="res://resources/styles/lane_indicator_yellow.tres" id="9_mci2m"]
+[ext_resource type="StyleBox" uid="uid://c0l317ch1qheb" path="res://resources/styles/lane_indicator_green.tres" id="10_jo0kc"]
+[ext_resource type="StyleBox" uid="uid://b711mni0rbu6b" path="res://resources/styles/lane_indicator_purple.tres" id="11_7h88n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3r36a"]
+bg_color = Color(0.09411765, 0.09411765, 0.14509805, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 1
+expand_margin_left = 16.0
+expand_margin_right = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o38to"]
+bg_color = Color(0.5372549, 0.8627451, 0.92156863, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 1
+expand_margin_left = 16.0
+expand_margin_right = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1o21e"]
+bg_color = Color(0.42352942, 0.4392157, 0.5254902, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 1
+expand_margin_left = 16.0
+expand_margin_right = 16.0
+
+[node name="ChartEditor" type="Control" unique_id=1905275707]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_q24t0")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1728907685]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_go4qb")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer" unique_id=1806797203]
+layout_mode = 2
+theme = ExtResource("1_q24t0")
+split_offsets = PackedInt32Array(120)
+dragging_enabled = false
+split_offset = 120
+
+[node name="LeftPanelContainer" type="PanelContainer" parent="PanelContainer/HSplitContainer" unique_id=423597316]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("3_42u7e")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HSplitContainer/LeftPanelContainer" unique_id=36892598]
+layout_mode = 2
+
+[node name="FlowContainer" type="FlowContainer" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer" unique_id=1621127870]
+layout_mode = 2
+vertical = true
+
+[node name="TimingPanelContainer" type="PanelContainer" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer" unique_id=1630637920]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_gtmq8")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/TimingPanelContainer" unique_id=1736392444]
+layout_mode = 2
+
+[node name="TimingOptions" type="VBoxContainer" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/TimingPanelContainer/MarginContainer" unique_id=1993809726]
+layout_mode = 2
+theme = ExtResource("1_q24t0")
+
+[node name="Title" type="Label" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/TimingPanelContainer/MarginContainer/TimingOptions" unique_id=135078713]
+layout_mode = 2
+theme = ExtResource("1_q24t0")
+theme_type_variation = &"HeaderMedium"
+text = "Timing options"
+horizontal_alignment = 1
+
+[node name="Metronome" type="HBoxContainer" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/TimingPanelContainer/MarginContainer/TimingOptions" unique_id=1683814822]
+layout_mode = 2
+theme = ExtResource("1_q24t0")
+
+[node name="Label" type="Label" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/TimingPanelContainer/MarginContainer/TimingOptions/Metronome" unique_id=599042602]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Metronome"
+
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/TimingPanelContainer/MarginContainer/TimingOptions/Metronome" unique_id=126440003]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("1_q24t0")
+theme_override_constants/align_to_largest_stylebox = 1
+
+[node name="BPM" type="HBoxContainer" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/TimingPanelContainer/MarginContainer/TimingOptions" unique_id=1598973758]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/TimingPanelContainer/MarginContainer/TimingOptions/BPM" unique_id=769407915]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "BPM"
+
+[node name="SpinBox" type="SpinBox" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/TimingPanelContainer/MarginContainer/TimingOptions/BPM" unique_id=1369962310]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 500.0
+step = 0.1
+value = 59.9
+allow_greater = true
+allow_lesser = true
+alignment = 1
+
+[node name="DebugPanelContainer" type="PanelContainer" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer" unique_id=706044178]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_42u7e")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/DebugPanelContainer" unique_id=951402211]
+layout_mode = 2
+
+[node name="Debug" type="VBoxContainer" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/DebugPanelContainer/MarginContainer" unique_id=1984182590]
+layout_mode = 2
+theme = ExtResource("1_q24t0")
+
+[node name="Title" type="Label" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/DebugPanelContainer/MarginContainer/Debug" unique_id=374114812]
+layout_mode = 2
+theme = ExtResource("1_q24t0")
+theme_type_variation = &"HeaderMedium"
+text = "Debug"
+horizontal_alignment = 1
+
+[node name="SpawnNote" type="HBoxContainer" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/DebugPanelContainer/MarginContainer/Debug" unique_id=2097221701]
+layout_mode = 2
+theme = ExtResource("1_q24t0")
+
+[node name="Button" type="Button" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/DebugPanelContainer/MarginContainer/Debug/SpawnNote" unique_id=1739631679]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_3r36a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o38to")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1o21e")
+text = " Spawn Notes"
+
+[node name="RightPanelContainer" type="PanelContainer" parent="PanelContainer/HSplitContainer" unique_id=1378406397]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("3_42u7e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HSplitContainer/RightPanelContainer" unique_id=586146500]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HSplitContainer/RightPanelContainer/VBoxContainer" unique_id=2008914225]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HSplitContainer/RightPanelContainer/VBoxContainer/MarginContainer" unique_id=717527074]
+custom_minimum_size = Vector2(450, 90)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HSplitContainer/RightPanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=906850939]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_3r36a")
+
+[node name="Indicator" type="Panel" parent="PanelContainer/HSplitContainer/RightPanelContainer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=697566238]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("7_o38to")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/HSplitContainer/RightPanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=228014450]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_3r36a")
+
+[node name="Indicator" type="Panel" parent="PanelContainer/HSplitContainer/RightPanelContainer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer2" unique_id=731582085]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("8_1o21e")
+
+[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/HSplitContainer/RightPanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1530782086]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_3r36a")
+
+[node name="Indicator" type="Panel" parent="PanelContainer/HSplitContainer/RightPanelContainer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer3" unique_id=1513542381]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("9_mci2m")
+
+[node name="MarginContainer4" type="MarginContainer" parent="PanelContainer/HSplitContainer/RightPanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1350413759]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_3r36a")
+
+[node name="Indicator" type="Panel" parent="PanelContainer/HSplitContainer/RightPanelContainer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer4" unique_id=1503632721]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("10_jo0kc")
+
+[node name="MarginContainer5" type="MarginContainer" parent="PanelContainer/HSplitContainer/RightPanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1479700763]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_3r36a")
+
+[node name="Indicator" type="Panel" parent="PanelContainer/HSplitContainer/RightPanelContainer/VBoxContainer/MarginContainer/HBoxContainer/MarginContainer5" unique_id=1197356897]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("11_7h88n")
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/HSplitContainer/RightPanelContainer/VBoxContainer" unique_id=1040794438]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="Timeline" type="Container" parent="PanelContainer/HSplitContainer/RightPanelContainer/VBoxContainer/MarginContainer2" unique_id=308165744]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("5_tylep")
+metadata/_custom_type_script = "uid://drvrsskh4nw2"
+
+[node name="Line2D" type="Line2D" parent="PanelContainer/HSplitContainer/RightPanelContainer/VBoxContainer/MarginContainer2/Timeline" unique_id=224182505]
+
+[connection signal="pressed" from="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/DebugPanelContainer/MarginContainer/Debug/SpawnNote/Button" to="PanelContainer/HSplitContainer/RightPanelContainer/VBoxContainer/MarginContainer2/Timeline" method="_on_button_pressed"]

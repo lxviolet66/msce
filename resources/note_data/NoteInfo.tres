@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NoteInfo" format=3 uid="uid://ixcssw5xt4y4"]
+
+[ext_resource type="Script" uid="uid://da87scew0tbd2" path="res://resources/note_data/note_info.gd" id="1_7ygpv"]
+
+[resource]
+script = ExtResource("1_7ygpv")
+lane = null
+color = null
+timestamp = null

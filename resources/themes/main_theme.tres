@@ -1,0 +1,43 @@
+[gd_resource type="Theme" format=3 uid="uid://g6ppddghccqt"]
+
+[ext_resource type="FontFile" uid="uid://bh1rsmydu3u55" path="res://assets/fonts/AtkinsonHyperlegible-Regular.ttf" id="1_3f3va"]
+[ext_resource type="StyleBox" uid="uid://br037lh4ggpyr" path="res://resources/styles/gizmo_normal_style_box.tres" id="1_lxams"]
+
+[resource]
+Button/colors/font_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+Button/colors/font_disabled_color = Color(0.42352942, 0.4392157, 0.5254902, 1)
+Button/colors/font_focus_color = Color(0.7058824, 0.74509805, 0.99607843, 1)
+Button/colors/font_hover_color = Color(0.7058824, 0.74509805, 0.99607843, 1)
+Button/colors/font_hover_pressed_color = Color(0.5372549, 0.8627451, 0.92156863, 1)
+Button/styles/normal = ExtResource("1_lxams")
+CheckButton/colors/button_checked_color = Color(0.5372549, 0.8627451, 0.92156863, 1)
+CheckButton/colors/button_unchecked_color = Color(0.7294118, 0.7607843, 0.87058824, 1)
+CheckButton/colors/font_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+CheckButton/colors/font_focus_color = Color(0.7058824, 0.74509805, 0.99607843, 1)
+CheckButton/colors/font_hover_color = Color(0.7058824, 0.74509805, 0.99607843, 1)
+CheckButton/colors/font_hover_pressed_color = Color(0.7058824, 0.74509805, 0.99607843, 1)
+CheckButton/colors/font_pressed_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+FlowContainer/constants/h_separation = 15
+FlowContainer/constants/v_separation = 15
+HSplitContainer/colors/touch_dragger_color = Color(0.66068745, 0.0003565526, 0.66839486, 1)
+HSplitContainer/constants/autohide = 0
+HSplitContainer/constants/minimum_grab_thickness = 12
+HSplitContainer/constants/separation = 12
+Label/colors/font_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+Label/fonts/font = ExtResource("1_3f3va")
+LineEdit/colors/caret_color = Color(0.9607843, 0.8784314, 0.8627451, 1)
+LineEdit/colors/font_color = Color(0.8039216, 0.8392157, 0.95686275, 1)
+LineEdit/fonts/font = ExtResource("1_3f3va")
+LineEdit/styles/normal = ExtResource("1_lxams")
+MarginContainer/constants/margin_bottom = 12
+MarginContainer/constants/margin_left = 12
+MarginContainer/constants/margin_right = 12
+MarginContainer/constants/margin_top = 12
+SpinBox/colors/down_disabled_icon_modulate = Color(0.42352942, 0.4392157, 0.5254902, 1)
+SpinBox/colors/down_hover_icon_modulate = Color(0.7058824, 0.74509805, 0.99607843, 1)
+SpinBox/colors/down_icon_modulate = Color(0.8039216, 0.8392157, 0.95686275, 1)
+SpinBox/colors/down_pressed_icon_modulate = Color(0.5372549, 0.8627451, 0.92156863, 1)
+SpinBox/colors/up_disabled_icon_modulate = Color(0.42352942, 0.4392157, 0.5254902, 1)
+SpinBox/colors/up_hover_icon_modulate = Color(0.7058824, 0.74509805, 0.99607843, 1)
+SpinBox/colors/up_icon_modulate = Color(0.8039216, 0.8392157, 0.95686275, 1)
+SpinBox/colors/up_pressed_icon_modulate = Color(0.5372549, 0.8627451, 0.92156863, 1)
