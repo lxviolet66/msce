@@ -5,6 +5,7 @@ extends Container
 const PAGE_LENGTH: int = 5
 const SCROLL_INCREMENT: int = 1
 
+# TODO: Refactor this to use colors derived from a theme resource
 const white   := Color(0xffffffff)
 const red     := Color(0xff0004ff)
 const yellow  := Color(0xfaeb36ff)
@@ -39,7 +40,7 @@ func _notification(what: int) -> void:
 		update_layout()
 
 
-func draw_grid(count) -> void:
+func draw_grid(_count) -> void:
 	pass
 	# TODO: make this draw horizontal lines at every second,
 
@@ -51,18 +52,21 @@ func update_layout() -> void:
 		note_display.color = Color(note_ref.color)
 		add_child(note_display)
 		
-		var note_rect: Rect2
-		match note_ref.lane:
-			NoteInfo.NoteLane.CENTER:
-				note_rect = Rect2(Vector2(size.x * 0.0, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
-			NoteInfo.NoteLane.TOP:
-				note_rect = Rect2(Vector2(size.x * 0.2, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
-			NoteInfo.NoteLane.LEFT:
-				note_rect = Rect2(Vector2(size.x * 0.4, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
-			NoteInfo.NoteLane.BOTTOM:
-				note_rect = Rect2(Vector2(size.x * 0.6, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
-			NoteInfo.NoteLane.RIGHT:
-				note_rect = Rect2(Vector2(size.x * 0.8, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
+		var note_rect := Rect2(
+				Vector2(size.x * (note_ref.lane / 5.0), note_ref.timestamp),
+				Vector2(size.x * 0.2, size.x * 0.2)
+		)
+		# match note_ref.lane:
+		# 	NoteInfo.NoteLane.CENTER:
+		# 		note_rect = Rect2(Vector2(size.x * 0.0, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
+		# 	NoteInfo.NoteLane.TOP:
+		# 		note_rect = Rect2(Vector2(size.x * 0.2, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
+		# 	NoteInfo.NoteLane.LEFT:
+		# 		note_rect = Rect2(Vector2(size.x * 0.4, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
+		# 	NoteInfo.NoteLane.BOTTOM:
+		# 		note_rect = Rect2(Vector2(size.x * 0.6, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
+		# 	NoteInfo.NoteLane.RIGHT:
+		# 		note_rect = Rect2(Vector2(size.x * 0.8, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
 		fit_child_in_rect(note_display, note_rect)
 
 
@@ -76,5 +80,5 @@ func _on_button_pressed() -> void:
 	add_note(NoteInfo.new(NoteInfo.NoteLane.TOP, NoteInfo.NoteColor.RED, 1.0))
 	add_note(NoteInfo.new(NoteInfo.NoteLane.LEFT, NoteInfo.NoteColor.YELLOW, 2.0))
 	add_note(NoteInfo.new(NoteInfo.NoteLane.BOTTOM, NoteInfo.NoteColor.GREEN, 3.0))
-	add_note(NoteInfo.new(NoteInfo.NoteLane.RIGHT, NoteInfo.NoteColor.PURPLE, 4.0))
+	add_note(NoteInfo.new(NoteInfo.NoteLane.RIGHT, NoteInfo.NoteColor.PURPLE, 40.0))
 	print(note_refs)
