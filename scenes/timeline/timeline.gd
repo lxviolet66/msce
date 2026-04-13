@@ -5,19 +5,12 @@ extends Container
 const PAGE_LENGTH: int = 5
 const SCROLL_INCREMENT: int = 1
 
-# TODO: Refactor this to use colors derived from a theme resource
-const white   := Color(0xffffffff)
-const red     := Color(0xff0004ff)
-const yellow  := Color(0xfaeb36ff)
-const green   := Color(0x7ac215ff)
-const purple  := Color(0x6f369cff)
-
 ## How far into the song (in seconds) the timeline should be
 var scroll: float = 0
 ## Number of seconds visible on the timeline
 var zoom: float = 10
 
-var note_refs: Dictionary[String, NoteRef]
+static var note_refs: Dictionary[String, NoteRef]
 
 @onready var lane_1_box := Rect2(Vector2(), size * Vector2(0.2, 1))
 
@@ -57,28 +50,33 @@ func update_layout() -> void:
 				Vector2(size.x * 0.2, size.x * 0.2)
 		)
 		# match note_ref.lane:
-		# 	NoteInfo.NoteLane.CENTER:
+		# 	NoteData.NoteLane.CENTER:
 		# 		note_rect = Rect2(Vector2(size.x * 0.0, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
-		# 	NoteInfo.NoteLane.TOP:
+		# 	NoteData.NoteLane.TOP:
 		# 		note_rect = Rect2(Vector2(size.x * 0.2, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
-		# 	NoteInfo.NoteLane.LEFT:
+		# 	NoteData.NoteLane.LEFT:
 		# 		note_rect = Rect2(Vector2(size.x * 0.4, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
-		# 	NoteInfo.NoteLane.BOTTOM:
+		# 	NoteData.NoteLane.BOTTOM:
 		# 		note_rect = Rect2(Vector2(size.x * 0.6, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
-		# 	NoteInfo.NoteLane.RIGHT:
+		# 	NoteData.NoteLane.RIGHT:
 		# 		note_rect = Rect2(Vector2(size.x * 0.8, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
 		fit_child_in_rect(note_display, note_rect)
 
 
-func add_note(note_info: NoteInfo) -> void:
+func add_note(note_info: NoteData) -> void:
 	var note := NoteRef.new(note_info)
 	note_refs.set(note.id, note)
 	queue_sort()
 
 func _on_button_pressed() -> void:
-	add_note(NoteInfo.new(NoteInfo.NoteLane.CENTER, NoteInfo.NoteColor.WHITE, 0.0))
-	add_note(NoteInfo.new(NoteInfo.NoteLane.TOP, NoteInfo.NoteColor.RED, 1.0))
-	add_note(NoteInfo.new(NoteInfo.NoteLane.LEFT, NoteInfo.NoteColor.YELLOW, 2.0))
-	add_note(NoteInfo.new(NoteInfo.NoteLane.BOTTOM, NoteInfo.NoteColor.GREEN, 3.0))
-	add_note(NoteInfo.new(NoteInfo.NoteLane.RIGHT, NoteInfo.NoteColor.PURPLE, 40.0))
-	print(note_refs)
+	add_note(NoteData.new(NoteData.NoteLane.CENTER, NoteData.NoteColor.WHITE, 0.0))
+	add_note(NoteData.new(NoteData.NoteLane.TOP, NoteData.NoteColor.RED, 40.0))
+	add_note(NoteData.new(NoteData.NoteLane.LEFT, NoteData.NoteColor.YELLOW, 80.0))
+	add_note(NoteData.new(NoteData.NoteLane.BOTTOM, NoteData.NoteColor.GREEN, 100.0))
+	add_note(NoteData.new(NoteData.NoteLane.RIGHT, NoteData.NoteColor.PURPLE, 120.0))
+	add_note(NoteData.new(NoteData.NoteLane.BOTTOM, NoteData.NoteColor.GREEN, 320.0))
+	add_note(NoteData.new(NoteData.NoteLane.TOP, NoteData.NoteColor.YELLOW, 180.0))
+	add_note(NoteData.new(NoteData.NoteLane.LEFT, NoteData.NoteColor.RED, 220.0))
+	add_note(NoteData.new(NoteData.NoteLane.RIGHT, NoteData.NoteColor.RED, 260.0))
+	add_note(NoteData.new(NoteData.NoteLane.CENTER, NoteData.NoteColor.WHITE, 300.0))
+	# print(note_refs)

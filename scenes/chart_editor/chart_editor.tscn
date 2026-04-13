@@ -7,6 +7,7 @@
 [ext_resource type="StyleBox" uid="uid://b3eymydwfvlvq" path="res://resources/styles/pane_3_style_box.tres" id="4_gtmq8"]
 [ext_resource type="Script" uid="uid://drvrsskh4nw2" path="res://scenes/timeline/timeline.gd" id="5_tylep"]
 [ext_resource type="Theme" uid="uid://bee06p7dc2qnj" path="res://resources/themes/lane_indicator.tres" id="6_3r36a"]
+[ext_resource type="Script" uid="uid://dgqk6pibb88hc" path="res://scenes/chart_editor/save_notes_button.gd" id="6_o38to"]
 [ext_resource type="StyleBox" uid="uid://cnkhjrf70jyh4" path="res://resources/styles/lane_indicator_white.tres" id="7_o38to"]
 [ext_resource type="StyleBox" uid="uid://2uui63t76ces" path="res://resources/styles/lane_indicator_red.tres" id="8_1o21e"]
 [ext_resource type="StyleBox" uid="uid://etxtvw1m5h4t" path="res://resources/styles/lane_indicator_yellow.tres" id="9_mci2m"]
@@ -161,6 +162,19 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_3r36a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_o38to")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1o21e")
 text = " Spawn Notes"
+
+[node name="SaveNotes" type="HBoxContainer" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/DebugPanelContainer/MarginContainer/Debug" unique_id=997358337]
+layout_mode = 2
+theme = ExtResource("1_q24t0")
+
+[node name="Button" type="Button" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/DebugPanelContainer/MarginContainer/Debug/SaveNotes" unique_id=436673989]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_3r36a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o38to")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1o21e")
+text = " Save Notes"
+script = ExtResource("6_o38to")
 
 [node name="RightPanelContainer" type="PanelContainer" parent="PanelContainer/HSplitContainer" unique_id=1378406397]
 layout_mode = 2

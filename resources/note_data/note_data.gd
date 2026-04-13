@@ -1,4 +1,4 @@
-class_name NoteInfo
+class_name NoteData
 extends Resource
 
 @export var lane: NoteLane = NoteLane.CENTER
