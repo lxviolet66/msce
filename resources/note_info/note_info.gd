@@ -27,7 +27,7 @@ enum NoteColor {
 func _init(
 		lane_: NoteLane = NoteLane.CENTER,
 		color_: NoteColor = NoteColor.WHITE,
-		timestamp_: float = 1.0
+		timestamp_: float = 1.0,
 ) -> void:
 	lane = lane_
 	color = color_
