@@ -1,8 +1,8 @@
 [Metadata]
-Name: greatest_song_ever
-Author: violet
+Name = greatest_song_ever
+Author = violet
 
-[Notes]:
+[Notes]
 0.0, CENTER, ffffffff
 40.0, TOP, ff0004ff
 80.0, LEFT, faeb36ff

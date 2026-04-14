@@ -1,17 +1,22 @@
 class_name ChartDescriptor
 extends Resource
 
-var name: String = "Name: "
-var author: String = "Author: "
+const SEPARATOR := " = " 
+
+var tags: Array[String]
 
 
-func _init(
-		p_name = "Unknown",
-		p_author = "Unknown",
-) -> void:
-	name += p_name
-	author += p_author
+func construct_tag(key, value) -> String:
+	return key + SEPARATOR + value
 
 
+func _init(p_name = "Unknown", p_author = "Unknown") -> void:
+	tags.append(construct_tag("Name", p_name))
+	tags.append(construct_tag("Author", p_author))
+
+
+# When converting this resource to a string (e.g trying to print it,
+# or by using the builtin `str()` function) this function is called
+# behind the scenes.
 func _to_string() -> String:
-	return "%s\n%s" % [name, author]
+	return "\n".join(tags)

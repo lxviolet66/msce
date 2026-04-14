@@ -14,11 +14,9 @@ func _init(
 
 
 func _to_string() -> String:
-	var notes: String = "\n".join(note_refs.keys())
-	# var notes: String = ""
-	# for line in keys.split("\n"):
-		# notes += "\t%s\n" % line
+	var notes := "\n".join(note_refs.keys())
+	var metadata := str(song_metadata)
 	return (
-			"[Metadata]\n%s\n" +
-			"[Notes]\n%s" % [song_metadata, notes]
+			"[Metadata]\n%s\n\n" % metadata
+			+ "[Notes]\n%s" % notes
 	)
