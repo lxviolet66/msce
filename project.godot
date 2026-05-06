@@ -19,6 +19,10 @@ run/main_scene="uid://dan7gh3s4gpx1"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ChartManager="*uid://dk6nc7am2jsjt"
+
 [display]
 
 window/stretch/mode="canvas_items"

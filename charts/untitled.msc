@@ -1,0 +1,15 @@
+[Metadata]
+Name = greatest_song_ever
+Author = violet
+
+[Notes]
+0.0, CENTER, ffffffff
+40.0, TOP, ff0004ff
+80.0, LEFT, faeb36ff
+100.0, BOTTOM, 7ac215ff
+120.0, RIGHT, 6f369cff
+320.0, BOTTOM, 7ac215ff
+180.0, TOP, faeb36ff
+220.0, LEFT, ff0004ff
+260.0, RIGHT, ff0004ff
+300.0, CENTER, ffffffff
