@@ -40,7 +40,6 @@ func draw_grid(_count) -> void:
 
 func update_layout() -> void:
 	for note_ref: NoteRef in note_refs.values():
-		# if the note is onscreen, put a little canvas item thing where it would be
 		var note_display := ColorRect.new()
 		note_display.color = Color(note_ref.color)
 		add_child(note_display)
@@ -49,17 +48,7 @@ func update_layout() -> void:
 				Vector2(size.x * (note_ref.lane / 5.0), note_ref.timestamp),
 				Vector2(size.x * 0.2, size.x * 0.2)
 		)
-		# match note_ref.lane:
-		# 	NoteData.NoteLane.CENTER:
-		# 		note_rect = Rect2(Vector2(size.x * 0.0, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
-		# 	NoteData.NoteLane.TOP:
-		# 		note_rect = Rect2(Vector2(size.x * 0.2, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
-		# 	NoteData.NoteLane.LEFT:
-		# 		note_rect = Rect2(Vector2(size.x * 0.4, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
-		# 	NoteData.NoteLane.BOTTOM:
-		# 		note_rect = Rect2(Vector2(size.x * 0.6, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
-		# 	NoteData.NoteLane.RIGHT:
-		# 		note_rect = Rect2(Vector2(size.x * 0.8, note_ref.timestamp), Vector2(size.x * 0.2, size.x * 0.2))
+
 		fit_child_in_rect(note_display, note_rect)
 
 
