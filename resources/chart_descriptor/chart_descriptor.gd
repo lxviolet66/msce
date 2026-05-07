@@ -11,7 +11,7 @@ func _init(data: Array[String]) -> void:
 		# Godot please just add array/tuple unpacking to core already I'll
 		# sell you my soul 🙏.
 		# The feature proposal on github literally has 99.7% positive approval
-		var __: Array[String] = line.split(SEPARATOR)
+		var __: PackedStringArray = line.split(SEPARATOR)
 		var key: String = __[0]
 		var value: String = __[1]
 		tags.set(key, value)

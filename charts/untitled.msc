@@ -1,6 +1,9 @@
 [Metadata]
-Name = greatest_song_ever
-Author = violet
+ConfigVersion = 1.0
+LastSaved = 1778155914.69064
+
+[Descriptor]
+name = greatest_song_everauthor = violet
 
 [Notes]
 0.0, CENTER, ffffffff

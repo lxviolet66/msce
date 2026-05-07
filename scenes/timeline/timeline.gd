@@ -40,6 +40,7 @@ func draw_grid(_count) -> void:
 
 func update_layout() -> void:
 	for note_ref: NoteRef in note_refs.values():
+		# if the note is onscreen, put a little canvas item thing where it would be
 		var note_display := ColorRect.new()
 		note_display.color = Color(note_ref.color)
 		add_child(note_display)
@@ -58,14 +59,14 @@ func add_note(note_info: NoteData) -> void:
 	queue_sort()
 
 func _on_button_pressed() -> void:
-	add_note(NoteData.new(NoteData.NoteLane.CENTER, NoteData.NoteColor.WHITE, 0.0))
-	add_note(NoteData.new(NoteData.NoteLane.TOP, NoteData.NoteColor.RED, 40.0))
-	add_note(NoteData.new(NoteData.NoteLane.LEFT, NoteData.NoteColor.YELLOW, 80.0))
-	add_note(NoteData.new(NoteData.NoteLane.BOTTOM, NoteData.NoteColor.GREEN, 100.0))
-	add_note(NoteData.new(NoteData.NoteLane.RIGHT, NoteData.NoteColor.PURPLE, 120.0))
-	add_note(NoteData.new(NoteData.NoteLane.BOTTOM, NoteData.NoteColor.GREEN, 320.0))
-	add_note(NoteData.new(NoteData.NoteLane.TOP, NoteData.NoteColor.YELLOW, 180.0))
-	add_note(NoteData.new(NoteData.NoteLane.LEFT, NoteData.NoteColor.RED, 220.0))
-	add_note(NoteData.new(NoteData.NoteLane.RIGHT, NoteData.NoteColor.RED, 260.0))
-	add_note(NoteData.new(NoteData.NoteLane.CENTER, NoteData.NoteColor.WHITE, 300.0))
+	add_note(NoteData.new(0.0,   NoteData.NoteLane.CENTER,  NoteData.NoteColor.WHITE))
+	add_note(NoteData.new(40.0,  NoteData.NoteLane.TOP,  NoteData.NoteColor.RED))
+	add_note(NoteData.new(80.0,  NoteData.NoteLane.LEFT,  NoteData.NoteColor.YELLOW))
+	add_note(NoteData.new(100.0, NoteData.NoteLane.BOTTOM, NoteData.NoteColor.GREEN))
+	add_note(NoteData.new(120.0, NoteData.NoteLane.RIGHT, NoteData.NoteColor.PURPLE))
+	add_note(NoteData.new(320.0, NoteData.NoteLane.BOTTOM, NoteData.NoteColor.GREEN))
+	add_note(NoteData.new(180.0, NoteData.NoteLane.TOP, NoteData.NoteColor.YELLOW))
+	add_note(NoteData.new(220.0, NoteData.NoteLane.LEFT, NoteData.NoteColor.RED))
+	add_note(NoteData.new(260.0, NoteData.NoteLane.RIGHT, NoteData.NoteColor.RED))
+	add_note(NoteData.new(300.0, NoteData.NoteLane.CENTER, NoteData.NoteColor.WHITE))
 	# print(note_refs)

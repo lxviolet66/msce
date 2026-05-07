@@ -1,9 +1,9 @@
 class_name NoteData
 extends Resource
 
+@export var timestamp: float
 @export var lane: NoteLane = NoteLane.CENTER
 @export var color: NoteColor = NoteColor.WHITE
-@export var timestamp: float
 
 enum NoteLane {
 	CENTER,
@@ -14,7 +14,7 @@ enum NoteLane {
 }
 
 # TODO: Refactor this enum to use colors derived from a theme resource
-## RRGGBBFF Color codes
+# and like also all the other times colors are used
 enum NoteColor {
 	WHITE = 0xffffffff, 
 	RED = 0xff0004ff, 
@@ -25,10 +25,10 @@ enum NoteColor {
 
 
 func _init(
+		p_timestamp: float = 1.0,
 		p_lane: NoteLane = NoteLane.CENTER,
 		p_color: NoteColor = NoteColor.WHITE,
-		p_timestamp: float = 1.0,
 ) -> void:
+	timestamp = p_timestamp
 	lane = p_lane
 	color = p_color
-	timestamp = p_timestamp
