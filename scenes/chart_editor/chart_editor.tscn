@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://drvrsskh4nw2" path="res://scenes/timeline/timeline.gd" id="5_tylep"]
 [ext_resource type="Theme" uid="uid://bee06p7dc2qnj" path="res://resources/themes/lane_indicator.tres" id="6_3r36a"]
 [ext_resource type="Script" uid="uid://dgqk6pibb88hc" path="res://scenes/chart_editor/save_notes_button.gd" id="6_o38to"]
+[ext_resource type="Script" uid="uid://dy1c61fb7lr8" path="res://scenes/chart_editor/load_chart_button.gd" id="7_1o21e"]
 [ext_resource type="StyleBox" uid="uid://cnkhjrf70jyh4" path="res://resources/styles/lane_indicator_white.tres" id="7_o38to"]
 [ext_resource type="StyleBox" uid="uid://2uui63t76ces" path="res://resources/styles/lane_indicator_red.tres" id="8_1o21e"]
 [ext_resource type="StyleBox" uid="uid://etxtvw1m5h4t" path="res://resources/styles/lane_indicator_yellow.tres" id="9_mci2m"]
@@ -167,7 +168,7 @@ text = " Spawn Notes"
 layout_mode = 2
 theme = ExtResource("1_q24t0")
 
-[node name="Button" type="Button" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/DebugPanelContainer/MarginContainer/Debug/SaveNotes" unique_id=436673989]
+[node name="Button" type="Button" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/DebugPanelContainer/MarginContainer/Debug/SaveNotes" unique_id=436673989 node_paths=PackedStringArray("timeline")]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_styles/normal = SubResource("StyleBoxFlat_3r36a")
@@ -175,6 +176,21 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_o38to")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1o21e")
 text = " Save Notes"
 script = ExtResource("6_o38to")
+timeline = NodePath("../../../../../../../../RightPanelContainer/VBoxContainer/MarginContainer2/Timeline")
+
+[node name="LoadChart" type="HBoxContainer" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/DebugPanelContainer/MarginContainer/Debug" unique_id=9530141]
+layout_mode = 2
+theme = ExtResource("1_q24t0")
+
+[node name="Button" type="Button" parent="PanelContainer/HSplitContainer/LeftPanelContainer/MarginContainer/FlowContainer/DebugPanelContainer/MarginContainer/Debug/LoadChart" unique_id=954574553 node_paths=PackedStringArray("timeline")]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_3r36a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o38to")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1o21e")
+text = "Load Chart"
+script = ExtResource("7_1o21e")
+timeline = NodePath("../../../../../../../../RightPanelContainer/VBoxContainer/MarginContainer2/Timeline")
 
 [node name="RightPanelContainer" type="PanelContainer" parent="PanelContainer/HSplitContainer" unique_id=1378406397]
 layout_mode = 2

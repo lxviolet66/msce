@@ -13,5 +13,10 @@ func _init(note_info: NoteData) -> void:
 	# Doesn't seem to be possible to index an enum like a dictionary, so until
 	# note colors are refactored into a theme resource we just print the hex
 	# value (good enough for testing)
+	# "good enough for testing" it's been like a month what am i cooking
 	self.id = "%s, %s, %x" % \
-			[timestamp, NoteData.NoteLane.keys()[lane], color]
+			[timestamp, NoteData.NoteLane.find_key(lane), color]
+
+
+func _to_string() -> String:
+	return id

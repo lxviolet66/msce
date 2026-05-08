@@ -1,9 +1,19 @@
 [Metadata]
-ConfigVersion = 1.0
-LastSaved = 1778155914.69064
+configVersion = 1.0
+lastSaved = 1778261815
+
+[Editor]
+metronomeEnabled = placeholder
+metronomeBeatDivisor = placeholder
+timingBeatDivisor = placeholder
+timingPoints = placeholder
+savedPatterns = placeholder
+zoomLevel = placeholder
+position = placeholder
 
 [Descriptor]
-name = greatest_song_everauthor = violet
+name = greatest_song_ever
+author = violet
 
 [Notes]
 0.0, CENTER, ffffffff
